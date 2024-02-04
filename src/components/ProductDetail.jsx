@@ -1,4 +1,3 @@
-// ProductDetail.jsx
 import React from "react";
 import { useParams } from "react-router-dom";
 
@@ -13,7 +12,7 @@ const ProductDetail = ({ products }) => {
   return (
     <div className="max-w-2xl mx-auto my-4 p-4 border border-gray-300 rounded">
       <img
-        className="w-full h-60 object-cover mb-4"
+        className="mx-auto w-50 h-58 mb-4"
         src={product.image}
         alt={product.description}
       />
