@@ -11,13 +11,16 @@ import "./App.css";
 import ProductDetail from "./components/ProductDetail";
 import Cart from "./components/Cart";
 import Layout from "./Layout";
+import Login from "./components/Login";
+import Contact from "./components/Contact";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route path="" element={<Products products={productsData.products} />} />
+      <Route path="" element={<Login />} />
+      <Route path="login" element={<Login />} />
       <Route
-        path="product"
+        path="products"
         element={<Products products={productsData.products} />}
       />
       <Route
@@ -25,6 +28,7 @@ const router = createBrowserRouter(
         element={<ProductDetail products={productsData.products} />}
       />
       <Route path="cart" element={<Cart />} />
+      <Route path="contact" element={<Contact />} />
     </Route>
   )
 );

@@ -1,14 +1,19 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../cartSlice";
+import { selectIsLoggedIn } from "../authSlice";
 
 const Products = ({ products }) => {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  if (!isLoggedIn) {
+    return <div>You need to log in to view this page.</div>;
+  }
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
   };
-
   return (
     <div className="max-w-7xl mx-auto my-4 p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
